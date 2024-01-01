@@ -1,0 +1,13 @@
+version: '1'
+
+services:
+  app:
+    image: nextci-dev
+    build:
+      context: ./
+      dockerfile: Dockerfile.development
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/app/app
+      - ./public:/app/public

@@ -1,0 +1,14 @@
+FROM node:alpine3.18 AS base
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm install
+
+COPY next.config.js .
+COPY tsconfig.json .
+COPY public ./public
+COPY app ./app
+
+CMD [ "npm", "run", "dev" ]

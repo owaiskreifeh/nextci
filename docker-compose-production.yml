@@ -1,0 +1,10 @@
+version: '1'
+
+services:
+  app:
+    image: nextci-prod
+    build: 
+      context: .
+      dockerfile: Dockerfile.production
+    ports:
+      - 3080:3000
